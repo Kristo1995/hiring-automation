@@ -8,5 +8,6 @@ Run testng.xml
 
 **Where to find the test output:**
 
+Make sure your run configuration has default listeners ticked<br/>
 Go to test-output/Hiring Automation Test Suite
 
