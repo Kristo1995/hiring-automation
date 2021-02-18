@@ -2,9 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Prime Automation">
-    <test name ="PrimesTests">
+    <test name ="StatusCodeEquals200Test">
         <classes>
-            <class name="tests.PrimesTests"/>
+            <class name="tests.StatusCodeEquals200Test"/>
+        </classes>
+    </test>
+    <test name ="StatusCodeEquals400Test">
+        <classes>
+            <class name="tests.StatusCodeEquals400Test"/>
         </classes>
     </test>
 </suite>
