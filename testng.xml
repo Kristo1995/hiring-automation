@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Prime Automation">
-    <test name ="StatusCodeEquals200Test">
+    <test name ="SuccessfulResponseTest">
         <classes>
-            <class name="tests.StatusCodeEquals200Test"/>
+            <class name="tests.SuccessfulResponseTest"/>
         </classes>
     </test>
-    <test name ="StatusCodeEquals400Test">
+    <test name ="NonPositiveIntegerTest">
         <classes>
-            <class name="tests.StatusCodeEquals400Test"/>
+            <class name="tests.NonPositiveIntegerTest"/>
         </classes>
     </test>
-    <test name ="StatusCodeEquals500Test">
+    <test name ="ErrorResponseTest">
         <classes>
-            <class name="tests.StatusCodeEquals500Test"/>
+            <class name="tests.ErrorResponseTest"/>
         </classes>
     </test>
 </suite>

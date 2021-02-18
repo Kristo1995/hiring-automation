@@ -44,18 +44,18 @@ public class TestUtil {
         return excelData;
     }
 
-    @DataProvider(name="testStatusCodeEquals200")
-    public static Object[][] testStatusCodeEquals200() throws Exception {
-        return getExcelData(testData,"testStatusCodeEquals200");
+    @DataProvider(name="testSuccessfulResponse")
+    public static Object[][] testSuccessfulResponse() throws Exception {
+        return getExcelData(testData,"testSuccessfulResponse");
     }
 
-    @DataProvider(name="testStatusCodeEquals400")
-    public static Object[][] testStatusCodeEquals400() throws Exception {
-        return getExcelData(testData,"testStatusCodeEquals400");
+    @DataProvider(name="testNonPositiveIntegerResponse")
+    public static Object[][] testNonPositiveIntegerResponse() throws Exception {
+        return getExcelData(testData,"testNonPositiveIntegerResponse");
     }
 
-    @DataProvider(name="testStatusCodeEquals500")
-    public static Object[][] testStatusCodeEquals500() throws Exception {
-        return getExcelData(testData,"testStatusCodeEquals500");
+    @DataProvider(name="testErrorResponse")
+    public static Object[][] testErrorResponse() throws Exception {
+        return getExcelData(testData,"testErrorResponse");
     }
 }

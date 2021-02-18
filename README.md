@@ -10,3 +10,11 @@ Run testng.xml
 
 Before running the tests make sure you have default listeners ticked in your run configuration
 After running the tests open test-output/emailable-report.html on your browser
+
+**What do the tests check:**
+
+- correct status code<br/>
+- 36 character request ID<br/>
+- response content type<br/>
+- response content<br/>
+- response time
