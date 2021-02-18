@@ -8,4 +8,4 @@ Run testng.xml
 
 **To view the output:**
 
-After running the tests open emailable-report.html on your browser
+After running the tests open test-output/emailable-report.html on your browser
