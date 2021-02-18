@@ -1,4 +1,4 @@
-package primes;
+package tests;
 
 
 import io.restassured.response.Response;
