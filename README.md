@@ -13,8 +13,8 @@ After running the tests open test-output/emailable-report.html on your browser
 
 **What do the tests check:**
 
-- correct status code<br/>
-- 36 character request ID<br/>
+- response status code<br/>
+- response ID<br/>
 - response content type<br/>
 - response content<br/>
 - response time
