@@ -8,7 +8,7 @@ Run testng.xml
 
 **To view the output:**
 
-Before running the tests make sure you have default listeners ticked in your run configuration
+Before running the tests make sure you have default listeners ticked in your run configuration<br/>
 After running the tests open test-output/emailable-report.html on your browser
 
 **What do the tests check:**
