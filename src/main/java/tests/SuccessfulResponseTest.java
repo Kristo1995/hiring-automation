@@ -1,12 +1,14 @@
 package tests;
 
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import util.TestUtil;
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 
 public class SuccessfulResponseTest {
 
@@ -22,7 +24,7 @@ public class SuccessfulResponseTest {
         Reporter.log("Response -> " + rs.getBody().asString(), true);
 
         String contentType = rs.getContentType();
-        Reporter.log("Status Code -> " + contentType, true);
+        Reporter.log("Content Type -> " + contentType, true);
 
         Assert.assertEquals(contentType, "application/json" , "Testcase " + testcase + " has incorrect Content Type:");
 
@@ -42,5 +44,42 @@ public class SuccessfulResponseTest {
         int timeLimit = (testcase.equals("1")) ? 5000 : 500;
 
         Assert.assertTrue(time <= timeLimit, "Testcase " + testcase + " has response time over 500ms:");
+
+        if (statusCode == 200) {
+            JsonPath jsonPathEvaluator = rs.jsonPath();
+            String actualResponseInitial = jsonPathEvaluator.get("initial").toString();
+
+            Assert.assertEquals(actualResponseInitial, value, "Testcase " + testcase + " has incorrect Response Initial Value:");
+
+            String actualResponsePrimes = jsonPathEvaluator.get("primes").toString();
+
+            int i;
+            int num;
+            StringBuilder primes = new StringBuilder();
+
+            for (i = 1; i <= Integer.parseInt(value); i++)
+            {
+                int counter = 0;
+                for(num = i; num >= 1; num--)
+                {
+                    if(i % num == 0)
+                    {
+                        counter = counter + 1;
+                    }
+                }
+                if (counter == 2)
+                {
+                    primes.append(i).append(", ");
+                }
+            }
+
+            if (primes.length() > 1) {
+                primes.setLength(primes.length() - 2);
+            }
+
+            primes = new StringBuilder("[" + primes + "]");
+
+            Assert.assertEquals(actualResponsePrimes, primes.toString(), "Testcase " + testcase + " has incorrect Response Primes Value:");
+        }
     }
 }

@@ -22,7 +22,7 @@ public class ErrorResponseTest {
         Reporter.log("Response -> " + rs.getBody().asString(), true);
 
         String contentType = rs.getContentType();
-        Reporter.log("Status Code -> " + contentType, true);
+        Reporter.log("Content Type -> " + contentType, true);
 
         Assert.assertEquals(contentType, "application/json" , "Testcase " + testcase + " has incorrect Content Type:");
 
