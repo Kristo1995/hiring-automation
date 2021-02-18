@@ -12,4 +12,9 @@
             <class name="tests.StatusCodeEquals400Test"/>
         </classes>
     </test>
+    <test name ="StatusCodeEquals500Test">
+        <classes>
+            <class name="tests.StatusCodeEquals500Test"/>
+        </classes>
+    </test>
 </suite>

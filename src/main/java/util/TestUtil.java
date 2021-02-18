@@ -53,4 +53,9 @@ public class TestUtil {
     public static Object[][] testStatusCodeEquals400() throws Exception {
         return getExcelData(testData,"testStatusCodeEquals400");
     }
+
+    @DataProvider(name="testStatusCodeEquals500")
+    public static Object[][] testStatusCodeEquals500() throws Exception {
+        return getExcelData(testData,"testStatusCodeEquals500");
+    }
 }

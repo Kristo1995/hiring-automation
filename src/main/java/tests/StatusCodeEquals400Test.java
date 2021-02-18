@@ -12,7 +12,7 @@ public class StatusCodeEquals400Test {
     @Test(dataProvider = "testStatusCodeEquals400", dataProviderClass = TestUtil.class)
     public void testStatusCodeEquals400(String testcase, String value) throws Exception {
 
-        baseURI = TestUtil.readProperties("URL.properties", "URL_PRIMES");
+        baseURI = TestUtil.readProperties("URL.properties", "URL");
 
         String id = "/" + value;
         System.out.println("Input -> " + value);
