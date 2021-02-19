@@ -10,14 +10,12 @@ import static io.restassured.RestAssured.*;
 
 /*
 This test class confirms that:
-- Response Status Code = 400
-- Response has a 36 character ID
-- Response has a application/json Content Type
+- Response time is less than 5000ms for 1st request and less than 500ms for subsequent ones
  */
-public class NonPositiveIntegerTest {
+public class PerformanceTest {
 
-    @Test(dataProvider = "testNonPositiveIntegerResponse", dataProviderClass = DataProviderUtil.class)
-    public void testNonPositiveIntegerResponse(String testcase, String value) throws Exception {
+    @Test(dataProvider = "testPerformance", dataProviderClass = DataProviderUtil.class)
+    public void testPerformance(String testcase, String value) throws Exception {
 
         baseURI = TestUtil.readProperties("URL.properties", "URL");
 
@@ -27,8 +25,6 @@ public class NonPositiveIntegerTest {
         Response rs = given().get(id);
         Reporter.log("Response -> " + rs.getBody().asString(), true);
 
-        int statusCodeExpected = 400;
-
-        TestUtil.performBaseAssertions(rs, testcase, statusCodeExpected);
+        TestUtil.performPerformanceAssertions(rs, testcase);
     }
 }

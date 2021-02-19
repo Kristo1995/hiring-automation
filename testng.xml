@@ -17,4 +17,9 @@
             <class name="tests.ErrorResponseTest"/>
         </classes>
     </test>
+    <test name ="PerformanceTest">
+        <classes>
+            <class name="tests.PerformanceTest"/>
+        </classes>
+    </test>
 </suite>
